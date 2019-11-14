@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import lombok.Builder;
 import lombok.Data;
@@ -31,8 +29,6 @@ public class AuditNasaCalls {
   
   private String requestMethodName;
   private Long responseTime;
-  
-  @Temporal(TemporalType.TIMESTAMP)
   private LocalDateTime createdDate;
 
 }
