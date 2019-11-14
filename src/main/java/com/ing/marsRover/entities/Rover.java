@@ -1,6 +1,5 @@
 package com.ing.marsRover.entities;
 
-import java.time.LocalDate;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -16,15 +15,13 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Rover {
   
-  private Long id;
+  private int id;
+  private int max_sol;
+  private int total_photos;
   private String name;
-  private LocalDate landingDate;
-  private LocalDate launchDate;
+  private String landing_date;
+  private String launch_date;
+  private String max_date;
   private String status;
-  private Long maxSol;
-  private LocalDate maxDate;
-  private Long totalPhotos;
-  private List<RoverCameras> roverCameras;
-
+  private List<Camera> cameras;
 }
-

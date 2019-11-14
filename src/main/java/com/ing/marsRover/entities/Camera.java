@@ -13,10 +13,10 @@ import lombok.Data;
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Camera {
-  
-  private Long id;
-  private String name;
-  private Long roverId;
-  private String fullName;
 
+  private int id;
+  private int rover_id;
+  private String name;
+  private String full_name;
+  
 }
