@@ -2,6 +2,7 @@ package com.ing.marsRover.entities;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -9,6 +10,7 @@ import lombok.Data;
  *
  */
 @Data
+@Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MarsRoverResponseObject {
 
