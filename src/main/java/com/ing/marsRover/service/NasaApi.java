@@ -1,4 +1,4 @@
-package com.ing.marsRover.helper;
+package com.ing.marsRover.service;
 
 import java.net.URI;
 import java.util.Optional;
@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import com.ing.marsRover.entities.MarsRoverRequest;
 import com.ing.marsRover.entities.MarsRoverResponseObject;
 import com.ing.marsRover.enums.SearchCriteriaEnum;
+import com.ing.marsRover.helper.Constants;
 import lombok.extern.slf4j.Slf4j;
 
 /**

@@ -7,7 +7,6 @@ import com.google.common.base.Stopwatch;
 import com.ing.marsRover.dto.AuditNasaCalls;
 import com.ing.marsRover.entities.MarsRoverResponseObject;
 import com.ing.marsRover.entities.MarsRoverRequest;
-import com.ing.marsRover.helper.NasaApi;
 import lombok.RequiredArgsConstructor;
 import com.ing.marsRover.helper.Constants;
 
