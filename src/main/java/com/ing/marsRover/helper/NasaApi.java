@@ -1,4 +1,4 @@
-package com.ing.marsRover.utils;
+package com.ing.marsRover.helper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -23,22 +23,29 @@ import static java.util.Arrays.asList;
 @Slf4j
 @RequiredArgsConstructor
 public class NasaApi {
-  
+
   @Value("${nasaApi.url}")
   private final String nasaApiUrl;
   private final ObjectMapper objectMapper;
   private final RestTemplate template;
-  
+
+
+  /**
+   * This method will call the external NasaApi GET endpoint and it will map the response to our
+   * entity
+   * 
+   * @param request
+   * @return SearchResponse
+   */
   public SearchResponse getPhotos(SearchRequest request) {
-    
+
     URI uri = UriComponentsBuilder.fromUriString(nasaApiUrl)
-        //.queryParam(name, values)
-        .build()
-        .toUri();
+        // .queryParam(name, values)
+        .build().toUri();
 
     try {
       log.debug("Calling NASA API with request: " + request);
-      
+
       ResponseEntity<String> response = template.getForEntity(uri, String.class);
 
       if (response == null) {
@@ -46,13 +53,13 @@ public class NasaApi {
 
       } else {
         String bodyAsString = response.getBody();
-       
+
         if (response.getStatusCode() == HttpStatus.OK && !bodyAsString.contains("Error")) {
           return SearchResponse.builder()
               .nasaResponse(asList(objectMapper.readValue(bodyAsString, NasaResponse.class)))
               .build();
 
-        } 
+        }
 
       }
 
@@ -60,17 +67,17 @@ public class NasaApi {
         return SearchResponse.builder().message("Not Found").build();
       }
 
-      log.error("unknown response {} from NASA Api, status code {}",
-          response, response.getStatusCode() == null ? "none" : response.getStatusCode());
+      log.error("unknown response {} from NASA Api, status code {}", response,
+          response.getStatusCode() == null ? "none" : response.getStatusCode());
 
     } catch (IOException e) {
       log.error("Error occurred while reading JSON", e);
 
     } catch (Exception e) {
       log.error("Error occurred while retrieving NASA Rover photos", e);
-      
+
     }
-    
+
     return null;
 
   }

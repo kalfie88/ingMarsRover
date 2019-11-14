@@ -16,6 +16,10 @@ public class AuditService {
   @Autowired
   private AuditRepository auditRepository;
   
+  /**
+   * Connects with the AuditRepository to save the audit information
+   * @param auditInfo
+   */
   public void saveAuditInfo(AuditInfo auditInfo) {
     AuditNasaCalls auditNasa = AuditNasaCalls.builder()
         .requestMethodName(auditInfo.getRequestMethodName())

@@ -3,6 +3,7 @@ package com.ing.marsRover.entities;
 import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Data;
+
 /**
  * @author kalfie
  *
