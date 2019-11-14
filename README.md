@@ -79,7 +79,7 @@ http://localhost:8080/actuator/health
 
 1. Download the app from the official site: [Postman](https://www.getpostman.com/downloads/)
 
-2. Import the Json file containing the Collection of endpoints you’ll need to test the app. You can find the file MarsRoverCollection.postman_collection.json under the root folder of the project. Just hit the “Import” button on the left corner, choose Import File, and drag and drop the file there. Or if you prefer you can use a shareable link, so click the Import button on the left corner, choose Import From link and copy this link [Postman Collection](TODO)
+2. Import the Json file containing the Collection of endpoints you’ll need to test the app. You can find the file MarsRoverCollection.postman_collection.json under the root folder of the project. Just hit the “Import” button on the left corner, choose Import File, and drag and drop the file there. Or if you prefer you can use a shareable link, so click the Import button on the left corner, choose Import From link and copy this link [Postman Collection](https://www.getpostman.com/collections/316ed52deafeeb104b14)
 
 
 
