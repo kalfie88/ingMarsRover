@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "2b499449-b41f-4fc4-bd30-05e25b3f8666",
+		"name": "MarsRoverCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/mars-rover/v1/retrievePhotos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dateType\": \"sol\",\n\t\"dateValue\": \"1000\",\n\t\"name\": \"curiosity\",\n\t\"camera\": \"fhaz\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mars-rover/v1/retrievePhotos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mars-rover",
+						"v1",
+						"retrievePhotos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/actuator/info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=hu3RqAOR1fo8mwCNEi9LMF7ZpFCoEOlaMyQRW3VA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=hu3RqAOR1fo8mwCNEi9LMF7ZpFCoEOlaMyQRW3VA",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"mars-photos",
+						"api",
+						"v1",
+						"rovers",
+						"curiosity",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "sol",
+							"value": "1000"
+						},
+						{
+							"key": "camera",
+							"value": "fhaz"
+						},
+						{
+							"key": "api_key",
+							"value": "hu3RqAOR1fo8mwCNEi9LMF7ZpFCoEOlaMyQRW3VA"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
