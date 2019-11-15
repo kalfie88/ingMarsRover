@@ -3,6 +3,7 @@
 This project is part of the ING coding challenge, the mars-rover service will connect to the NASA Api and return the photos of out query search.
 Also it will save some auditing information, like the request method name, date of the query, response time; into our H2 DB.
 
+## BackEnd API
 
 ## Project Structure
 
@@ -30,6 +31,11 @@ Under this path we have several packages mentioned below:
 ### src/main/resources
 
 1. H2 files -> schema.sql is the script to create the schema in H2.
+
+
+### src/main/resources/templates
+
+1. html files for the UI -> index.html and displayPhotos.html
 
 
 ### src/test/java
@@ -62,6 +68,7 @@ So please follow these instructions so you can setup the environment properly.
 4. Get Lombok -> Lombok is an external jar that needs to be added into your IDE. For more information on how to add Lombok to your IDE (Eclipse or IntelliJ) follow this guide: [Lombok-IDE](https://www.baeldung.com/lombok-ide) Also there’s a copy of the jar file (Lombok.jar) in the project under the root folder.
 
 
+
 #### For testing the backend
 
 You can test the endpoints via Postman.
@@ -75,6 +82,8 @@ And since there's an actuator you can also hit that to test connectivity.
 http://localhost:8080/actuator/health 
 ```
 
+
+
 ##### Installing Postman
 
 1. Download the app from the official site: [Postman](https://www.getpostman.com/downloads/)
@@ -83,7 +92,7 @@ http://localhost:8080/actuator/health
 
 
 
-### Installing
+### Installing the APP
 
 Once your development environment is setup, we can go ahead and get the project into your IDE and run it. So please follow the next steps to do so:
 
@@ -104,7 +113,7 @@ git clone https://github.com/kalfie88/ingMarsRover.git
 6. To hit the Endpoints: Open Postman and run each of the endpoints in the collection imported in the section above (Prerequisites)
 
 
-#### Endpoints available 
+#### Other endpoints available 
 
 To see the documentation of the endpoints available you can refer to Swagger.
 
@@ -127,9 +136,35 @@ http://localhost:8080/swagger-ui.html#/mars-rover-controller
 
 ## Running the tests
 
-For this project, we have one integration test, and several unit test under the src/main/test path.
+For this project, we have one integration test, and several unit test, for the service and controller layers, under the src/main/test path.
 But for a more visual test you can use Postman.
 
+
+## Web User Interface
+
+The GUI was done using Thymeleaf, so it's a really simple interface. It's controlled by MarsRoverSearchController.java and it uses the index.html and displayPhotos.html under /resources/templates folder
+
+To access the GUI you can hit this endpoint:
+
+```
+http://localhost:8080/
+
+```
+And can set the search criteria with these info:
+
+| Date Type | sol  |
+| ------- | --- | 
+| Date Value | 1000 |
+| ------- | --- | 
+| Rover | curiosity |
+| ------- | --- | 
+| Camera | fhaz |
+
+
+
+## Docs
+Additionally to the swagger documentation, there's 2 pdf documents with a screenshot of how the GUI should look like working.
+You can find these documents in the root of the project under /docs.
 
 
 ## Author
