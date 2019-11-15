@@ -5,9 +5,9 @@ Also it will save some auditing information, like the request method name, date 
 
 ## BackEnd API
 
-## Project Structure
+### Project Structure
 
-### src/main/java
+#### src/main/java
 
 Under this path we have several packages mentioned below:
 
@@ -28,17 +28,17 @@ Under this path we have several packages mentioned below:
 8. com.ing.marsRover.service -> Application services 
 
 
-### src/main/resources
+#### src/main/resources
 
 1. H2 files -> schema.sql is the script to create the schema in H2.
 
 
-### src/main/resources/templates
+#### src/main/resources/templates
 
 1. html files for the UI -> index.html and displayPhotos.html
 
 
-### src/test/java
+#### src/test/java
 
 1. com.ing.marsRover-> Integration test
 
@@ -69,7 +69,7 @@ So please follow these instructions so you can setup the environment properly.
 
 
 
-#### For testing the backend
+#### Testing the backend
 
 You can test the endpoints via Postman.
 
@@ -92,7 +92,7 @@ http://localhost:8080/actuator/health
 
 
 
-### Installing the APP
+##### Installing the APP
 
 Once your development environment is setup, we can go ahead and get the project into your IDE and run it. So please follow the next steps to do so:
 
@@ -113,7 +113,7 @@ git clone https://github.com/kalfie88/ingMarsRover.git
 6. To hit the Endpoints: Open Postman and run each of the endpoints in the collection imported in the section above (Prerequisites)
 
 
-#### Other endpoints available 
+### Other endpoints available 
 
 To see the documentation of the endpoints available you can refer to Swagger.
 
@@ -134,7 +134,7 @@ http://localhost:8080/swagger-ui.html#/mars-rover-controller
 ```
 
 
-## Running the tests
+### Running the tests
 
 For this project, we have one integration test, and several unit test, for the service and controller layers, under the src/main/test path.
 But for a more visual test you can use Postman.
@@ -159,6 +159,7 @@ And can set the search criteria with these info:
 | Rover | curiosity |
 | ------- | --- | 
 | Camera | fhaz |
+
 
 
 
